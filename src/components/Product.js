@@ -1,18 +1,32 @@
-import React from 'react'
-import styled from 'styled-components'
-import { formatPrice } from '../utils/helpers'
-import { FaSearch } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import React from "react";
+import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
+import { formatPrice } from "../utils/helpers";
+import { Link } from "react-router-dom";
 
-const Product = () => {
-  return <h4>product</h4>
-}
+const Product = ({ imageUrl, name, price, id }) => {
+  return (
+    <Wrapper>
+      <div className="container">
+        <img src={imageUrl} alt={name} />
+        <Link to={`/products/${id}`} className="link">
+          <FaSearch />
+        </Link>
+        <footer>
+          <h5>{name}</h5>
+          <p>Price: {formatPrice(price)}</p>
+        </footer>
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.article`
   .container {
     position: relative;
     background: var(--clr-black);
     border-radius: var(--radius);
+    overflow: hidden;
   }
   img {
     width: 100%;
@@ -48,20 +62,24 @@ const Wrapper = styled.article`
     opacity: 1;
   }
   footer {
-    margin-top: 1rem;
+    height: 100px;
+    padding: 10px;
+    background: var(--clr-grey-10);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
   }
   footer h5,
   footer p {
     margin-bottom: 0;
     font-weight: 400;
+    text-align: center;
   }
 
   footer p {
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
   }
-`
-export default Product
+`;
+export default Product;
