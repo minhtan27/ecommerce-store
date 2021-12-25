@@ -30,7 +30,7 @@ const Wrapper = styled.article`
   img {
     width: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: fit;
     transition: var(--transition);
   }
 
