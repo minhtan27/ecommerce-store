@@ -5,7 +5,13 @@ export const formatPrice = (price) => {
   }).format(price);
 };
 
-export const getUniqueValues = () => {};
+export const getUniqueValues = (productsArray, key) => {
+  let unique = productsArray.map((item) => item[key]);
+  if (key === "colors") {
+    unique = unique.flat();
+  }
+  return ["all", ...new Set(unique)];
+};
 
 export const findImages = (productID, imageList) => {
   const image = imageList.find((i) => i.sys.id === productID);
