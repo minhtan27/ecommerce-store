@@ -25,7 +25,7 @@ const initialState = {
     min_price: 0,
     max_price: 0,
     price: 0,
-    shipping: false,
+    shipping: true,
   },
 };
 
@@ -53,7 +53,6 @@ export const FilterProvider = ({ children }) => {
   };
 
   const updateSort = (e) => {
-    const name = e.target.name;
     const value = e.target.value;
     dispatch({ type: UPDATE_SORT, payload: value });
   };
@@ -68,7 +67,7 @@ export const FilterProvider = ({ children }) => {
       value = e.target.dataset.color;
     }
     if (name === "price") {
-      value = Number(value);
+      value = new Number(value);
     }
     if (name === "shipping") {
       value = e.target.checked;
