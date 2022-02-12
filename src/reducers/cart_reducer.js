@@ -19,6 +19,7 @@ const cart_reducer = (state, action) => {
           if (newAmount > cartItem.max) newAmount = cartItem.max;
           return { ...cartItem, amount: newAmount };
         }
+        return cartItem;
       });
 
       return { ...state, cart: tempCart };

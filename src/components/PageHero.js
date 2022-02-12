@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import bgImg from "../assets/hero-background.jpg";
 
 const PageHero = ({ title }) => {

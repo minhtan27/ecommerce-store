@@ -1,6 +1,5 @@
 import React from "react";
 import { useFilterContext } from "../context/filter_context";
-import products_reducer from "../reducers/products_reducer";
 import GridView from "./GridView";
 import ListView from "./ListView";
 
